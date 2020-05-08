@@ -32,6 +32,7 @@ public class TestClass1 {
 	public void Test2() {
 		driver.navigate().to("https://automationtalks.com/");
 		System.out.println("Test 2 Title is " + driver.getTitle());
+		System.out.println("Test 2 Title is " + driver.getCurrentUrl());
 	}
 
 	@Test
