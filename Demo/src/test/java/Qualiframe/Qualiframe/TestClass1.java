@@ -4,12 +4,15 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -42,9 +45,12 @@ public class TestClass1 {
 
 	@Test
 	public void Test2() {
-		driver.navigate().to("https://automationtalks.com/");
-		System.out.println("Test 2 Title is " + driver.getTitle());
-		System.out.println("Test 2 URL is " + driver.getCurrentUrl());
+		 	driver.get("https://www.google.com");
+	        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.name("q")));
+	        WebElement searchBar = driver.findElement(By.name("q"));
+	        searchBar.click();
+	        searchBar.sendKeys("Experitest");
+	        searchBar.sendKeys(Keys.ENTER);
 	}
 
 	@Test
