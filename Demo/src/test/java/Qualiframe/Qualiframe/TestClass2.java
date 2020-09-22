@@ -26,7 +26,7 @@ public class TestClass2 {
 
 	@BeforeMethod
 	public void launchDriver() throws MalformedURLException {
-		url = "http://172.29.176.1:4444/wd/hub";
+		url = "http://192.168.1.8:4444/wd/hub";
 		desCap.setPlatform(Platform.WINDOWS);
 		driver = new RemoteWebDriver(new URL(url), desCap);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
