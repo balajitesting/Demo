@@ -31,7 +31,7 @@ public class TestClass1 {
 		 */
 		DesiredCapabilities desCap = DesiredCapabilities.chrome();
 		desCap.setPlatform(Platform.WINDOWS);
-		driver = new RemoteWebDriver(new URL("http://192.168.1.3:4444/wd/hub"), desCap);
+		driver = new RemoteWebDriver(new URL("http://172.29.176.1:4444/wd/hub"), desCap);
 		//driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), desCap);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		// driver.navigate().to("https://automationtalks.com/");
